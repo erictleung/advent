@@ -26,4 +26,5 @@ python setup.py install
 git clone https://github.com/erictleung/advent2017.git
 cd advent2017
 python -m unittest
+python -m unittest -v # See tests being run
 ```
