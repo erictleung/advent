@@ -25,6 +25,10 @@ def inv_captcha(in_num):
 
     return final_sum
 
+def half_captcha(in_num):
+    final_sum = 0
+    return final_sum
+
 
 if __name__ == "__main__":
     data = sys.argv[1] # Take file argument input
