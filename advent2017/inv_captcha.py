@@ -46,7 +46,7 @@ def half_captcha(in_num):
 
 
 if __name__ == "__main__":
-    data = sys.argv[1] # Take file argument input
+    data = sys.argv[1]  # Take file argument input
     with open(data, "r") as fh:
         raw = fh.readline().rstrip()
     print(inv_captcha(raw))
