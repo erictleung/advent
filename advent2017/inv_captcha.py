@@ -3,9 +3,13 @@
 import sys
 
 
-def inv_captcha(in_num):
+def make_num_to_digits_list(in_num):
     # Take number and split up digits into list
-    digits = [int(i) for i in str(in_num)]
+    return [int(i) for i in str(in_num)]
+
+
+def inv_captcha(in_num):
+    digits = make_num_to_digits_list(in_num)
     final_sum = 0
 
     # Loop through all digits
@@ -25,8 +29,19 @@ def inv_captcha(in_num):
 
     return final_sum
 
+
 def half_captcha(in_num):
+    digits = make_num_to_digits_list(in_num)
+    look_ahead_by = len(digits) // 2
     final_sum = 0
+
+    # Loop through all digits
+    digit_list_idx = range(len(digits))
+    for i in digit_list_idx:
+        digit_pair_idx = (i + look_ahead_by) % len(digits)
+        if digits[i] == digits[digit_pair_idx]:
+            final_sum += digits[i]
+
     return final_sum
 
 
