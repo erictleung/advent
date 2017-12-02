@@ -7,12 +7,18 @@ My solutions for the Advent of Code 2017
 **Table of Contents**
 
 - [Prerequisites](#prerequisites)
+- [Conventions](#conventions)
 - [Installation](#installation)
 - [Testing](#testing)
 
 ## Prerequisites
 
 - Python 3 (https://www.python.org/)
+
+## Conventions
+
+My solutions aim to have minimal package dependencies and aim to adhere to PEP8
+using the [`pycodestyle`](https://github.com/pycqa/pycodestyle) style checker.
 
 ## Installation
 
