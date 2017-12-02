@@ -38,6 +38,9 @@ def calc_even_checksum(in_arr):
 
 
 if __name__ == "__main__":
+    # Run script on command line
+    # $ python advant2017/corrupt_checksum.py data/day2.txt
+
     # Take file argument input
     data = sys.argv[1]
 
