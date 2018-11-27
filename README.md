@@ -9,6 +9,7 @@ My solutions for the Advent of Code
 - [Prerequisites](#prerequisites)
 - [Conventions](#conventions)
 - [Installation](#installation)
+- [Running Solutions](#running-solutions)
 - [Testing](#testing)
 
 ## Prerequisites
@@ -27,6 +28,17 @@ git clone https://github.com/erictleung/advent.git
 cd advent
 python setup.py install
 ```
+
+## Running Solutions
+
+Here is an example solution run.
+
+```bash
+cd advent
+python advent2015/not_quite_lisp.py data/2015_day1.py
+```
+
+The data is saved and run through as a command line interface.
 
 ## Testing
 
