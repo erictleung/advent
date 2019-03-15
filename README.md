@@ -35,7 +35,7 @@ Here is an example solution run.
 
 ```bash
 cd advent
-python advent2015/not_quite_lisp.py data/2015_day1.py
+python advent2015/not_quite_lisp.py data/2015_day1.txt
 ```
 
 The data is saved and run through as a command line interface.
