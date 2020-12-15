@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
-def multiply_twenty_twenty(in_list):
+def find_multiply_nums(in_list, sum_num = 2020):
+    """
+    Find two numbers that sum to a number and then multiply.
+    """
 
-    new_list = [2020 - x for x in in_list]
+    new_list = [sum_num - x for x in in_list]
     good_nums = list(set(start_list) & set(new_list))
 
     return(good_nums[0] * good_nums[1])
