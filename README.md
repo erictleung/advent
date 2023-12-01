@@ -1,7 +1,5 @@
 # advent
 
-[![Build Status](https://travis-ci.org/erictleung/advent.svg?branch=master)](https://travis-ci.org/erictleung/advent)
-
 My solutions for the [Advent of Code](https://adventofcode.com/) problems.
 
 **Table of Contents**
