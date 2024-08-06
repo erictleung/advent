@@ -1,0 +1,66 @@
+---
+title: "Diving"
+author: "Eric Leung"
+date: "12/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(dplyr)
+library(dbplyr)
+library(readr)
+
+conn <- src_memdb()
+conn_isolated <- conn$con
+```
+
+
+```{r}
+input <- read_delim("02-dive.txt",
+                    delim = " ",
+                    col_names = c("direction", "amt")) %>%
+  mutate(amt = if_else(direction == "up", -amt, amt))
+copy_to(conn, input, overwrite = TRUE)
+```
+
+
+## Part 1
+
+```{sql, connection=conn_isolated}
+select direction, sum(amt) as amt
+from input
+group by direction
+```
+
+
+```{r}
+1939 * (2040 + (-931))
+```
+
+
+## Part 2
+
+```{sql, connection=conn_isolated}
+with a as (
+  select
+    i,
+    V,
+    split_part(V, ' ', 1) as direction,
+    case
+      when direction = 'up' then split_part(V, ' ', 2)::int * -1
+      else split_part(V, ' ', 2)::int
+      end as amt,
+    lag(direction) over (order by i) as V_lag,
+    sum(amt) over (order by i asc rows between 1 preceding and current row) as aim,
+    1 as horizontal,
+    1 as depth
+  from EL_ADVENT_DIVE
+)
+select * from a;
+```
+
